@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <title>Tweetwall - Sign In</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,36 +10,37 @@
     <link href="{{ settings.STATIC_URL }}/css/tweetwall.css" rel="stylesheet">
     <link href="{{ settings.STATIC_URL }}/css/twitter-button.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ settings.STATIC_URL }}/css/font-awesome.css">
-  </head>
+</head>
 <body>
-	<script src="{{ settings.STATIC_URL }}/js/bootstrap.min.js"></script>
-	<div class="container">
-		<div class="navbar">
-		  <div class="navbar-inner">
-		    <a class="brand" href="#">Tweetwall</a>
-		    <ul class="nav">
-		      <li class="active"><a href="#">Home</a></li>
-		    </ul>
-		    <ul class="nav pull-right">
-		      <li><a href="http://github.com/epochiero/tweetwall">About</a></li>
-		    </ul>
-		  </div>
-		</div>
-		<div class="row-fluid">
-			<div class="header span6 offset3">
-				<h1>Tweetwall allows you to visualize multimedia content (videos, images, audio, etc) from your twitter stream.</h1>
+<script src="{{ settings.STATIC_URL }}/js/bootstrap.min.js"></script>
+<div class="container">
+    <div class="navbar">
+        <div class="navbar-inner">
+            <a class="brand" href="#">Tweetwall</a>
+            <ul class="nav">
+                <li class="active"><a href="#">Home</a></li>
+            </ul>
+            <ul class="nav pull-right">
+                <li><a href="http://github.com/epochiero/tweetwall">About</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="header span6 offset3">
+            <h1>Tweetwall allows you to visualize multimedia content (videos, images, audio, etc) from your twitter
+                stream.</h1>
 
-				<form action="signin">
-				<div class="sign_in_with_twitter darker span1 offset2">
-					<button>
-						<div class="icon"></div>
-						Sign-in with Twitter
-					</button>
-				</div>
-				</form>
-			</div>
-		</div>
-	</div>
+            <form action="signin">
+                <div class="sign_in_with_twitter darker span1 offset2">
+                    <button>
+                        <div class="icon"></div>
+                        Sign-in with Twitter
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 </body>
 
 </html>
