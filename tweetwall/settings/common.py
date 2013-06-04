@@ -6,7 +6,7 @@ env = lambda e, d: os.environ[e] if os.environ.has_key(e) else d
 
 ADMINS = (
     ('Ezequiel Pochiero', 'epochiero@gmail.com'),
-)
+    )
 
 MANAGERS = ADMINS
 
@@ -54,28 +54,26 @@ PROJECT_ROOT = os.path.join(os.path.abspath(os.path.dirname(__file__)), '..')
 
 STATIC_URL = env('STATIC_URL', '')
 
-
 TEMPLATE_DIRS = (
     os.path.join(PROJECT_ROOT, 'templates'),
-)
-
+    )
 
 STATICFILES_DIRS = (
     os.path.join(PROJECT_ROOT, 'static'),
-)
+    )
 
 # List of finder classes that know how to find static files in
 # various locations.
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-)
+    )
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
-)
+    )
 
 ROOT_URLCONF = 'tweetwall.urls'
 
@@ -87,8 +85,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-)
-
+    )
 
 INSTALLED_APPS = (
     'django.contrib.auth',
@@ -98,11 +95,19 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-)
+    )
 
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s'
+        },
+        'simple': {
+            'format': '%(levelname)s %(message)s'
+        },
+    },
     'filters': {
         'require_debug_false': {
             '()': 'django.utils.log.RequireDebugFalse'
@@ -113,6 +118,11 @@ LOGGING = {
             'level': 'ERROR',
             'filters': ['require_debug_false'],
             'class': 'django.utils.log.AdminEmailHandler'
+        },
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple'
         }
     },
     'loggers': {
@@ -121,9 +131,13 @@ LOGGING = {
             'level': 'ERROR',
             'propagate': True,
         },
+        'django.debug': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+            'propagate': True,
+        }
     }
 }
-
 
 SECRET_KEY = env('SECRET_KEY', '')
 
