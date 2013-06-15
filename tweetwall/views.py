@@ -5,7 +5,10 @@ from django.core.urlresolvers import reverse
 from django.template import RequestContext
 from .twitter import Twitter
 
+
 def index(request):
+    if is_authenticated(request):
+        return redirect(reverse('tweetwall.views.wall'))
     return render_to_response('index.html', {'settings': settings}, context_instance=RequestContext(request))
 
 
@@ -39,3 +42,7 @@ def wall(request):
 def _save_tokens(request, auth_tokens):
     request.session['oauth_token'] = auth_tokens['oauth_token']
     request.session['oauth_token_secret'] = auth_tokens['oauth_token_secret']
+
+
+def is_authenticated(request):
+    return request.session.get('oauth_token')
