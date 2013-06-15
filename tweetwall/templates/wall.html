@@ -30,7 +30,7 @@
                 <li style="padding:25px">
                     <img src="{{ tweet.profile_image }}"/>
                     {{ tweet.name }}<br/>
-                    {{ tweet.text }}
+                    {{ tweet.text|urlize }}
                 </li>
                 {% for link_url in tweet.youtube_links %}
 
