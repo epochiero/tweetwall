@@ -1,17 +1,1 @@
-Django==1.4.5
-Jinja2==2.7
-MarkupSafe==0.18
-argparse==1.2.1
-dj-database-url==0.2.1
-django-debug-toolbar==0.9.4
-gunicorn==0.17.4
-oauthlib==0.4.2
-pip-tools==0.3.4
-psycopg2==2.5
-python-memcached==1.52
-requests==1.2.2
-requests-oauthlib==0.3.2
-simplejson==3.3.0
-twitter==1.9.4
-twython==2.10.1
-wsgiref==0.1.2
+-r requirements/prod.txt
